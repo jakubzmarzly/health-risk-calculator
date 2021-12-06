@@ -147,14 +147,14 @@
 
         let riskMessage = "Not insurable"
         if (totalRisk <= 20) {
-            message = "This customer is Low Risk"
+            riskMessage = "This customer is Low Risk"
         } else if (totalRisk <= 50) {
-            message = "This customer is Moderate Risk"
+            riskMessage = "This customer is Moderate Risk"
         } else if (totalRisk <= 75) {
-            message = "This customer is High Risk"
+            riskMessage = "This customer is High Risk"
         }
 
-        document.getElementById("riskMessage").innerHTML = message;
+        document.getElementById("riskMessage").innerHTML = riskMessage;
     }
 
     function BMI(height, weight) {
@@ -175,16 +175,14 @@
 
         document.getElementById("bmiResultID").innerHTML = "Your Body Mass Index is: " + bmiValue;
 
-        let bmiMessage = "N/A"
-        if (bmiValue <= 24.9) {
-            message = "Normal"
-        } else if (bmiValue <= 29.9) {
-            message = "Overweight"
-        } else if (bmiValue <= 34.9) {
-            message = "Obese"
+        let bmiMessage = "Obese"
+        if (bmiValue < 24.9) {
+            bmiMessage = "Normal"
+        } else if (bmiValue < 29.9) {
+            bmiMessage = "Overweight"
         }
 
-        document.getElementById("bmiMessage").innerHTML = message;
+        document.getElementById("bmiMessage").innerHTML = bmiMessage;
     
     }
 </script>
